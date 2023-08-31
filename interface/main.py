@@ -68,6 +68,7 @@ with st.form("input_form",clear_on_submit=True):
             #image = Image.open(input_img)
             image=trim(img)
             new_image=image.resize((64,64))
+            new_image=np.reshape(new_image,(64,64,3))
             img_array = np.array(new_image)
             loaded_model = load_model()
             prediction = predict(loaded_model,img_array)[0]
