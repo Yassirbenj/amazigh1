@@ -63,11 +63,12 @@ with st.form("input_form",clear_on_submit=True):
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
         if input_img is not None:
-            st.image(canvas_result.image_data)
+            #st.image(canvas_result.image_data)
             img = Image.fromarray(input_img)
             #image = Image.open(input_img)
             image=trim(img)
             new_image=image.resize((64,64))
+            st.image(new_image)
             img_array = np.array(new_image)
             img_array=img_array[:,:,3]
             loaded_model = load_model()
