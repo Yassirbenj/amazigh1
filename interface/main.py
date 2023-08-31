@@ -65,11 +65,11 @@ with st.form("input_form",clear_on_submit=True):
         if input_img is not None:
             st.image(canvas_result.image_data)
             #image = Image.open(input_img)
-            #image=trim(image)
-            #new_image=image.resize((64,64))
-            #img_array = np.array(new_image)
-            #loaded_model = load_model()
-            #prediction = predict(loaded_model,img_array)[0]
-            #pred_proba= predict(loaded_model,img_array)[1]
+            image=trim(input_img)
+            new_image=image.resize((64,64))
+            img_array = np.array(new_image)
+            loaded_model = load_model()
+            prediction = predict(loaded_model,img_array)[0]
+            pred_proba= predict(loaded_model,img_array)[1]
             #st.image(new_image)
-            #st.write(f"<h3>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
+            st.write(f"<h3>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
