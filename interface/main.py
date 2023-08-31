@@ -70,7 +70,7 @@ with st.form("input_form",clear_on_submit=True):
             new_image=image.resize((64,64))
             st.image(new_image)
             img_array = np.array(new_image)
-            img_array=img_array[:,:,3]
+            img_array=img_array[:,:,:3]
             loaded_model = load_model()
             prediction = predict(loaded_model,img_array)[0]
             pred_proba= predict(loaded_model,img_array)[1]
