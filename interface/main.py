@@ -63,6 +63,7 @@ with st.form("input_form",clear_on_submit=True):
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
         if input_img is not None:
+            st.text(input_img)
             img = Image.fromarray(input_img)
             st.image(img)
             image=trim(img)
