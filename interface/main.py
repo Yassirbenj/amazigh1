@@ -63,20 +63,14 @@ with st.form("input_form",clear_on_submit=True):
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
         if input_img is not None:
-            st.write(np.unique(input_img))
             img = Image.fromarray(input_img)
-            st.image(img)
             image=trim(img)
             new_image=image.resize((64,64))
             st.image(new_image)
             img_array = np.array(new_image)
-            st.write(np.unique(img_array))
             img_array=img_array[:,:,1:4]
-            st.write(np.unique(img_array))
             img_tensor=tf.convert_to_tensor(img_array)
-            #st.text(img_tensor)
             loaded_model = load_model()
             prediction = predict(loaded_model,img_tensor)[0]
             pred_proba= predict(loaded_model,img_tensor)[1]
-            #st.image(new_image)
             st.write(f"<h3>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
