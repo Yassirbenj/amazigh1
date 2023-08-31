@@ -71,7 +71,8 @@ with st.form("input_form",clear_on_submit=True):
             st.image(new_image)
             img_array = np.array(new_image)
             st.write(np.unique(img_array))
-            img_array=img_array[:,:,:3]
+            img_array=img_array[:,:,1:4]
+            st.write(np.unique(img_array))
             img_tensor=tf.convert_to_tensor(img_array)
             #st.text(img_tensor)
             loaded_model = load_model()
