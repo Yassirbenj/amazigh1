@@ -62,7 +62,7 @@ with st.form("input_form",clear_on_submit=True):
 
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
-        if input_img:
+        #if input_img:
             image = Image.open(input_img)
             image=trim(image)
             new_image=image.resize((64,64))
