@@ -64,8 +64,9 @@ with st.form("input_form",clear_on_submit=True):
     if st.form_submit_button("Predict"):
         if input_img is not None:
             st.image(canvas_result.image_data)
+            img = Image.fromarray(input_img)
             #image = Image.open(input_img)
-            image=trim(canvas_result)
+            image=trim(img)
             new_image=image.resize((64,64))
             img_array = np.array(new_image)
             loaded_model = load_model()
