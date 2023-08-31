@@ -58,17 +58,18 @@ with st.form("input_form",clear_on_submit=True):
                     point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
                     key="canvas",
                     )
-    input_img=canvas_result
+    input_img=canvas_result.image_data
 
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
-        #if input_img:
-            image = Image.open(input_img)
-            image=trim(image)
-            new_image=image.resize((64,64))
-            img_array = np.array(new_image)
-            loaded_model = load_model()
-            prediction = predict(loaded_model,img_array)[0]
-            pred_proba= predict(loaded_model,img_array)[1]
-            st.image(new_image)
-            st.write(f"<h3>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
+        if input_img is not None:
+            st.image(canvas_result.image_data)
+            #image = Image.open(input_img)
+            #image=trim(image)
+            #new_image=image.resize((64,64))
+            #img_array = np.array(new_image)
+            #loaded_model = load_model()
+            #prediction = predict(loaded_model,img_array)[0]
+            #pred_proba= predict(loaded_model,img_array)[1]
+            #st.image(new_image)
+            #st.write(f"<h3>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
