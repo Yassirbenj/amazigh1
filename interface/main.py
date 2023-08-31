@@ -71,6 +71,7 @@ with st.form("input_form",clear_on_submit=True):
             img_array = np.array(new_image)
             img_array=img_array[:,:,:3]
             img_tensor=tf.convert_to_tensor(img_array)
+            st.text(img_tensor)
             loaded_model = load_model()
             prediction = predict(loaded_model,img_tensor)[0]
             pred_proba= predict(loaded_model,img_tensor)[1]
