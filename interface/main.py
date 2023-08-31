@@ -62,6 +62,7 @@ with st.form("input_form",clear_on_submit=True):
 
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
+        st.text(input_img)
         if input_img is not None:
             img = Image.fromarray(input_img)
             #image = Image.open(input_img)
