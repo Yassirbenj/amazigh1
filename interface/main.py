@@ -58,7 +58,7 @@ with st.form("input_form",clear_on_submit=True):
                     point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
                     key="canvas",
                     )
-    input_img=canvas_result.image_data
+    input_img=canvas_result
 
     #input_img = st.file_uploader('character image',type=['png', 'jpg','jpeg'])
     if st.form_submit_button("Predict"):
