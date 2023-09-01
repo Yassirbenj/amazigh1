@@ -54,7 +54,7 @@ with st.form("input_form",clear_on_submit=True):
                     #background_image=Image.open(bg_image) if bg_image else None,
                     update_streamlit=realtime_update,
                     height=150,
-                    drawing_mode=drawing_mode,
+                    drawing_mode="freedraw",
                     point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
                     key="canvas",
                     )
