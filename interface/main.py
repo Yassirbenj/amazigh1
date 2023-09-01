@@ -48,12 +48,12 @@ with st.form("input_form",clear_on_submit=True):
     st.write("<h3>Upload your image for the magic ✨</h3>", unsafe_allow_html=True)
     canvas_result = st_canvas(
                     fill_color="rgba(255, 255, 255, 0.3)",  # Fixed fill color with some opacity
-                    #stroke_width=stroke_width,
+                    stroke_width=stroke_width,
                     #stroke_color=stroke_color,
                     #background_color=bg_color,
                     #background_image=Image.open(bg_image) if bg_image else None,
                     update_streamlit=True,
-                    height=150,
+                    height=250,
                     drawing_mode="freedraw",
                     #point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
                     key="canvas",
