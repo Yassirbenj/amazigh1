@@ -78,5 +78,5 @@ with st.form("input_form",clear_on_submit=True):
                 st.write(f"<h5>The nearest letter is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
             else:
                 st.write(f"<h5>Correct, The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
-            real_img=Image.open(f'data/{prediction}')
+            real_img=Image.open(f'data/{prediction}.jpg')
             st.image(real_img)
