@@ -13,7 +13,7 @@ def load_model():
 
 def predict(model,image):
     yhat=model.predict(np.expand_dims(image/255,0))
-    labels=['ya','yab','yach','yad','yadd','yae','yaf','yag',
+    labels=['ya','YAB','yach','yad','yadd','yae','yaf','yag',
             'yagh','yagw','yah','yahh','yaj','yak','yakw','yal',
             'yam','yan','yaq','yar','yarr','yas','yass','yat',
             'yatt','yaw','yax','yay','yaz','yazz','yey','yi','yu']
