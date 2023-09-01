@@ -73,7 +73,7 @@ with st.form("input_form",clear_on_submit=True):
             loaded_model = load_model()
             prediction = predict(loaded_model,img_tensor)[0]
             pred_proba= predict(loaded_model,img_tensor)[1]
-            if float(pred_proba) < 95:
+            if float(pred_proba) < 90:
                 st.write(f"<h3>We weren't able to identify this image with sufficient precision, please try again ", unsafe_allow_html=True)
                 st.write(f"<h5>The nearest letter is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
             else:
