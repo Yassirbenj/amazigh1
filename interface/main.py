@@ -35,14 +35,14 @@ def trim(image):
 #drawing_mode = st.sidebar.selectbox(
    # "Drawing tool:", ("freedraw"))
 
-#stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
+stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
 #if drawing_mode == 'point':
    # point_display_radius = st.sidebar.slider("Point display radius: ", 1, 25, 3)
 #stroke_color = st.sidebar.color_picker("Stroke color hex: ")
 #bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
 #bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 
-realtime_update = st.sidebar.checkbox("Update in realtime", True)
+#realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
 with st.form("input_form",clear_on_submit=True):
     st.write("<h3>Upload your image for the magic ✨</h3>", unsafe_allow_html=True)
@@ -52,7 +52,7 @@ with st.form("input_form",clear_on_submit=True):
                     #stroke_color=stroke_color,
                     #background_color=bg_color,
                     #background_image=Image.open(bg_image) if bg_image else None,
-                    update_streamlit=realtime_update,
+                    update_streamlit=True,
                     height=150,
                     drawing_mode="freedraw",
                     #point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
