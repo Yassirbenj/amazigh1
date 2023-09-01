@@ -33,7 +33,7 @@ def trim(image):
 
 # Specify canvas parameters in application
 drawing_mode = st.sidebar.selectbox(
-    "Drawing tool:", "freedraw")
+    "Drawing tool:", ("freedraw"))
 
 stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
 if drawing_mode == 'point':
