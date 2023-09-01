@@ -13,10 +13,10 @@ def load_model():
 
 def predict(model,image):
     yhat=model.predict(np.expand_dims(image/255,0))
-    labels=['A','B','C','D','DD','AE','F','G',
-            'GH','GW','H','HH','J','K','KW','L',
-            'M','N','Q','R','RR','S','SS','T',
-            'TT','W','X','Y','Z','ZZ','E','I','U']
+    labels=['ya','yab','yach','yad','yadd','yae','yaf','yag',
+            'yagh','yagw','yah','yahh','yaj','yak','yakw','yal',
+            'yam','yan','yaq','yar','yarr','yas','yass','yat',
+            'yatt','yaw','yax','yay','yaz','yazz','yey','yi','yu']
     proba=np.max(yhat)*100
     y = "{:.2f}".format(proba)
     result=labels[np.argmax(yhat)]
@@ -78,3 +78,5 @@ with st.form("input_form",clear_on_submit=True):
                 st.write(f"<h5>The nearest letter is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
             else:
                 st.write(f"<h5>The prediction is: {prediction} with probability of {pred_proba}% </h3>", unsafe_allow_html=True)
+            real_img=Image.open(f'data/{prediction}')
+            st.image(real_img)
